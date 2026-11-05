@@ -1,0 +1,538 @@
+
+/* =====================================
+   ELECTRICITY BILL CALCULATOR
+   COMPLETE CSS - DAY 10
+===================================== */
+
+
+/* =====================================
+   GENERAL STYLING
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-content h1 {
+    color: #166534;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+
+/* =====================================
+   MAIN CONTAINER
+===================================== */
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================
+   SECTION HEADINGS
+===================================== */
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    color: #166534;
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+.section-heading p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* =====================================
+   DAY 10 - DASHBOARD
+===================================== */
+
+.dashboard-section {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.dashboard-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    padding: 20px 15px;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #16a34a;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 42px;
+    background: #f0fdf4;
+    border-radius: 8px;
+    font-size: 22px;
+}
+
+.dashboard-details {
+    min-width: 0;
+}
+
+.dashboard-details h3 {
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.dashboard-details p {
+    color: #166534;
+    font-size: 22px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================
+   CALCULATOR FORM
+===================================== */
+
+#billForm {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #334155;
+}
+
+input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+
+/* =====================================
+   CALCULATE BUTTON
+===================================== */
+
+.calculate-button {
+    background: #16a34a;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.calculate-button:hover {
+    background: #15803d;
+}
+
+
+/* =====================================
+   ERROR MESSAGE
+===================================== */
+
+.error-message {
+    color: #dc2626;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =====================================
+   BILL RESULT
+===================================== */
+
+.result-section {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.result-section h3 {
+    color: #166534;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.bill-amount {
+    color: #15803d;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.result-note {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+
+/* =====================================
+   BILL HISTORY SECTION
+===================================== */
+
+.history-section {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #e2e8f0;
+}
+
+
+/* =====================================
+   HISTORY SEARCH
+===================================== */
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+.search-box label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#historySearch {
+    width: 100%;
+    background: #f8fafc;
+}
+
+#historySearch::placeholder {
+    color: #94a3b8;
+}
+
+
+/* =====================================
+   HISTORY ITEM
+===================================== */
+
+.history-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+.history-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.history-item p {
+    color: #475569;
+    font-size: 15px;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+.history-item strong {
+    color: #1e293b;
+}
+
+
+/* =====================================
+   DOWNLOAD RECEIPT BUTTON
+===================================== */
+
+.download-receipt-button {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px 5px 5px 0;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.download-receipt-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* =====================================
+   PRINT RECEIPT BUTTON
+===================================== */
+
+.print-receipt-button {
+    background: #7c3aed;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.print-receipt-button:hover {
+    background: #6d28d9;
+}
+
+
+/* =====================================
+   DELETE BILL BUTTON
+===================================== */
+
+.delete-bill-button {
+    background: #dc2626;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.delete-bill-button:hover {
+    background: #b91c1c;
+}
+
+
+/* =====================================
+   CLEAR ALL HISTORY BUTTON
+===================================== */
+
+.clear-history-button {
+    background: #475569;
+    color: #ffffff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.clear-history-button:hover {
+    background: #334155;
+}
+
+
+/* =====================================
+   EMPTY HISTORY MESSAGE
+===================================== */
+
+.empty-history {
+    text-align: center;
+    color: #64748b;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+
+/* =====================================
+   INFORMATION SECTION
+===================================== */
+
+.info-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #eff6ff;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+}
+
+.info-section h3 {
+    color: #1d4ed8;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.info-section p {
+    color: #475569;
+    font-size: 14px;
+}
+
+.formula {
+    background: #ffffff;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.example {
+    font-weight: 600;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media screen and (max-width: 700px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    .container {
+        padding: 20px 15px;
+        border-radius: 10px;
+    }
+
+    .header-content h1 {
+        font-size: 24px;
+    }
+
+    .header-content p {
+        font-size: 14px;
+    }
+
+    .section-heading h2 {
+        font-size: 20px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .dashboard-card {
+        padding: 18px;
+    }
+
+    .dashboard-details p {
+        font-size: 20px;
+    }
+
+    .bill-amount {
+        font-size: 24px;
+    }
+
+    .history-item {
+        padding: 15px;
+    }
+
+    .download-receipt-button,
+    .print-receipt-button,
+    .delete-bill-button {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+}
+
+
+/* =====================================
+   PRINT RECEIPT PAGE STYLING
+===================================== */
+
+@media print {
+
+    body {
+        background: #ffffff;
+        padding: 0;
+    }
+
+    .header,
+    .container,
+    .footer {
+        display: none;
+    }
+
+}

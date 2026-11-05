@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Electricity Bill Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Electricity Bill Calculator</h1>
+            <p>Calculate and manage your electricity bills easily.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Dashboard -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+                <h2>Dashboard Overview</h2>
+                <p>A summary of your electricity bill records.</p>
+            </div>
+
+            <div class="dashboard-cards">
+
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">📄</div>
+
+                    <div class="dashboard-details">
+                        <h3>Total Bills Calculated</h3>
+                        <p id="totalBills">0</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">⚡</div>
+
+                    <div class="dashboard-details">
+                        <h3>Total Electricity Units</h3>
+                        <p id="totalUnits">0 kWh</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">💰</div>
+
+                    <div class="dashboard-details">
+                        <h3>Total Amount</h3>
+                        <p id="totalAmount">₦0.00</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Calculator -->
+        <section class="calculator-section">
+
+            <div class="section-heading">
+                <h2>Calculate Your Bill</h2>
+                <p>Enter your electricity usage and tariff below.</p>
+            </div>
+
+            <form id="billForm">
+
+                <div class="form-group">
+                    <label for="units">Electricity Units (kWh)</label>
+
+                    <input
+                        type="number"
+                        id="units"
+                        name="units"
+                        placeholder="e.g. 100"
+                        min="0"
+                        step="any"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="tariff">Tariff per Unit (₦)</label>
+
+                    <input
+                        type="number"
+                        id="tariff"
+                        name="tariff"
+                        placeholder="e.g. 100"
+                        min="0"
+                        step="any"
+                        required
+                    >
+                </div>
+
+                <p id="errorMessage" class="error-message" role="alert"></p>
+
+                <button type="submit" class="calculate-button">
+                    Calculate Bill
+                </button>
+
+            </form>
+
+            <!-- Calculation Result -->
+            <div id="result" class="result-section">
+
+                <h3>Estimated Electricity Bill</h3>
+
+                <p id="billAmount" class="bill-amount">
+                    ₦0.00
+                </p>
+
+                <p class="result-note">
+                    This is an estimated bill based on the values entered.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Bill History -->
+        <section class="history-section">
+
+            <div class="section-heading">
+                <h2>Bill History</h2>
+                <p>Your previously calculated bills are saved here.</p>
+            </div>
+
+            <!-- Search History -->
+            <div class="search-box">
+
+                <label for="historySearch">
+                    Search Bill History
+                </label>
+
+                <input
+                    type="search"
+                    id="historySearch"
+                    placeholder="Search units, tariff, amount or date..."
+                >
+
+            </div>
+
+            <!-- Saved Bills -->
+            <div id="billHistory" class="bill-history">
+
+                <p class="empty-history">
+                    No bill history yet.
+                </p>
+
+            </div>
+
+            <!-- Clear History -->
+            <button
+                type="button"
+                id="clearHistory"
+                class="clear-history-button"
+            >
+                Clear History
+            </button>
+
+        </section>
+
+
+        <!-- Information -->
+        <section class="info-section">
+
+            <h3>How to Calculate Your Bill</h3>
+
+            <p>
+                Your electricity bill is calculated by multiplying
+                the electricity units consumed by the tariff per unit.
+            </p>
+
+            <div class="formula">
+                Total Bill = Units Consumed × Tariff per Unit
+            </div>
+
+            <p class="example">
+                Example: 100 kWh × ₦100 = ₦10,000
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            &copy; 2026 Electricity Bill Calculator.
+            Built with HTML, CSS and JavaScript.
+        </p>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
